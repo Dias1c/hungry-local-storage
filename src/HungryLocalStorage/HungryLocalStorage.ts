@@ -22,7 +22,7 @@ export class HungryLocalStorage {
     return isRewriting
   }
 
-  public get(key: string): any {
+  public get(key: string): any | null {
     const item = localStorage.getItem(key)
     if (item == null) return null
 
