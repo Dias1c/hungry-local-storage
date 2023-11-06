@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "test": " find -name \"*test.ts\" | xargs node --loader tsx --test"
+    "test": " find -name \"*test.ts\" | xargs node --loader tsx --test",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
