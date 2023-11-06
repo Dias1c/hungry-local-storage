@@ -1,13 +1,14 @@
-import { getCurrentTimestamp } from "../time/getCurrentTimestamp";
-import { getExpirationTimestamp } from "../time/getExpirationTimestamp";
-import { TExpiration } from "../time/types";
-import { parseItem } from "./parseItem";
-import { isExpired } from "./isExpired";
-import { isInstanceOfIHungryLocalStorageItem } from "./isInstanceOfIHungryLocalStorageItem";
-import { IHungryLocalStorageItem } from "./types";
+import { getCurrentTimestamp } from "../time/getCurrentTimestamp.js";
+import { getExpirationTimestamp } from "../time/getExpirationTimestamp.js";
+import { TExpiration } from "../time/types.js";
+import { parseItem } from "./parseItem.js";
+import { isExpired } from "./isExpired.js";
+import { isInstanceOfIHungryLocalStorageItem } from "./isInstanceOfIHungryLocalStorageItem.js";
+import { IHungryLocalStorageItem } from "./types.js";
 
 export class HungryLocalStorage {
   private autoFlushEverySeconds?: number
+  private autoFlushChangesCount: number = 0
 
   public set(key: string, value: any, expiration?: TExpiration): boolean {
     const item: IHungryLocalStorageItem = {
@@ -53,16 +54,27 @@ export class HungryLocalStorage {
       localStorage.removeItem(keys[i])
       flushed++
     }
+
     return flushed
   }
 
   public setAutoFlush(flushEverySeconds: number | null) {
+    this.autoFlushChangesCount++
     this.autoFlushEverySeconds = flushEverySeconds ?? undefined
     if (!flushEverySeconds) return
 
+    const autoFlushUpdatedCount = this.autoFlushChangesCount
+    const shouldStopAutoFlush = (): boolean => {
+      if (!this.autoFlushEverySeconds) return true
+      if (autoFlushUpdatedCount != this.autoFlushChangesCount) return true
+      if (flushEverySeconds != this.autoFlushEverySeconds) return true
+      return false
+    }
+
     const autoFlush = () => {
-      if (!this.autoFlushEverySeconds) return
-      if (flushEverySeconds != this.autoFlushEverySeconds) return
+      if (shouldStopAutoFlush()) return
+
+      this.flush()
       setTimeout(autoFlush, flushEverySeconds * 1000)
     }
     setTimeout(autoFlush, flushEverySeconds * 1000)
