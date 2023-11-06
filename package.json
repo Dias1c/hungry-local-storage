@@ -1,0 +1,40 @@
+{
+  "name": "@diaskappassov/hungry-local-storage",
+  "version": "0.1.0",
+  "description": "💾⌛ Local storage tool but with expiration time (auto delete expired data).",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": " find -name \"*test.ts\" | xargs node --loader tsx --test",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dias1c/hungry-local-storage.git"
+  },
+  "keywords": [
+    "localStorage",
+    "local storage",
+    "temporaryLocalStorage",
+    "temporary local storage",
+    "browser",
+    "storage",
+    "expiration",
+    "auto delete"
+  ],
+  "author": "Dias Kappassov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dias1c/hungry-local-storage/issues"
+  },
+  "homepage": "https://github.com/Dias1c/hungry-local-storage#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "tsx": "^3.14.0"
+  }
+}
