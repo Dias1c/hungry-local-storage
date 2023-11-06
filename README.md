@@ -91,7 +91,7 @@ import { hls } from "@diaskappassov/hungry-local-storage";
 hls.setAutoFlush(60 * 10);
 ```
 
-> If you run `setAutoFlush` method twice with different values, then the last value will be used and it finishes all old `autoFlush` timers.
+> If you run `setAutoFlush` method twice with different values, then the last value will be used, and it will finish all old `autoFlush` timers.
 
 If you set auto flush value to `null` then auto flush will be disabled.
 
