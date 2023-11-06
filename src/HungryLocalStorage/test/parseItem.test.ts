@@ -1,4 +1,4 @@
-import assert from "node:assert";
+import assert from "node:assert/strict";
 import test from "node:test";
 import { parseItem } from "../parseItem";
 
@@ -28,15 +28,14 @@ test("check function for any types", async (t) => {
         expected: "this is string",
       },
       {
-        param: "{string:\"string\",number:123,boolean:false,null:null,undefined:undefined,object:{},array:[1,\"string\",true,false,undefined,null]}",
+        param: '{"string":"string","number":123,"boolean":false,"null":null,"object":{},"array":[1,"string",true,false,null]}',
         expected: {
           string: "string",
           number: 123,
           boolean: false,
           null: null,
-          undefined: undefined,
           object: {},
-          array: [1, "string", true, false, undefined, null],
+          array: [1, "string", true, false, null],
         },
       },
       {
@@ -60,8 +59,8 @@ test("check function for any types", async (t) => {
         },
       },
       {
-        param: "[1,\"string\",true,false,undefined,null]",
-        expected: [1, "string", true, false, undefined, null],
+        param: '[1,"string", true, false, null]',
+        expected: [1, "string", true, false, null],
       },
       {
         param: [1, "string", true, false, undefined, null],
@@ -72,8 +71,8 @@ test("check function for any types", async (t) => {
   for (let i = 0; i < table.length; i++) {
     const el = table[i];
     await t.test(`onParam: ${el.param}`, (t) => {
-      assert.deepStrictEqual(parseItem(el.param), el.expected)
+      const actual = parseItem(el.param)
+      assert.deepEqual(actual, el.expected)
     })
-
   }
 })

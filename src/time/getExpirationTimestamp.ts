@@ -1,6 +1,6 @@
-import { DurationInSeconds } from "./DurationInSeconds"
-import { getCurrentTimestamp } from "./getCurrentTimestamp"
-import { TExpiration } from "./types"
+import { DurationInSeconds } from "./DurationInSeconds.js"
+import { getCurrentTimestamp } from "./getCurrentTimestamp.js"
+import { TExpiration } from "./types.js"
 
 export function getExpirationTimestamp(expiration: TExpiration): number {
   if (typeof expiration === 'number') return expiration
