@@ -44,6 +44,10 @@ export class HungryLocalStorage {
     return isExpired(parsedItem)
   }
 
+  public remove(key: string) {
+    localStorage.removeItem(key)
+  }
+
   public flush(): number {
     if (localStorage.length == 0) return 0
 
