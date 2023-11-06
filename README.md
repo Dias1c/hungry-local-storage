@@ -8,7 +8,7 @@ This is a simple tool for storing data in localStorage with expiration time. It'
 
 ### Why hungry-local-storage?
 
-The reason why I called this package `hungry-local-storage` is that he is a endlessly hungry thats allowed to eat only after the item store time expires. And it checks at specified intervals (every N seconds you specified) whether the object's storage period has expired so that it can be eaten. Such an obedient hungry tool.
+The reason why I called this package `hungry-local-storage` is that he is endlessly hungry thats allowed to eat only after the item's store time expires. And it checks at specified intervals (every N seconds you specify) whether the object's storage period has expired so that it can be eaten. Such an obedient, hungry tool.
 
 ## Usage
 
