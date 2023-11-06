@@ -82,7 +82,7 @@ console.log("flush returned:", countRemoved);
 
 #### Setting Auto Flush
 
-By default auto flush is disabled. You, to enable it, need to set auto flush value in seconds.
+By default auto flush is disabled. To enable it, execute `setAutoFlush` method with setting values in seconds.
 
 ```ts
 import { hls } from "@diaskappassov/hungry-local-storage";
