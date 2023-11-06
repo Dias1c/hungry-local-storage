@@ -1,5 +1,5 @@
 {
-  "name": "@dias1c/hungry-local-storage",
+  "name": "@diaskappassov/hungry-local-storage",
   "version": "0.0.1",
   "description": "💾⌛ Local storage tool but with expiration time (auto delete expired data).",
   "main": "./src/index.js",
@@ -15,8 +15,15 @@
     "type": "git",
     "url": "git+https://github.com/Dias1c/hungry-local-storage.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "localStorage",
+    "local storage",
+    "browser",
+    "storage",
+    "expiration",
+    "auto delete"
+  ],
+  "author": "Dias Kappassov",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Dias1c/hungry-local-storage/issues"
