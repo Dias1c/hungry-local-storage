@@ -6,6 +6,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "rootDir": "src"
-  }
+    "declaration": true,
+    "outDir": "./lib/esm"
+  },
+  "exclude": ["./**/tests/*", "./**/test/*", "*.test.ts"],
+  "include": ["./src"]
 }

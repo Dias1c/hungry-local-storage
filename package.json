@@ -2,13 +2,14 @@
   "name": "@diaskappassov/hungry-local-storage",
   "version": "0.0.1",
   "description": "💾⌛ Local storage tool but with expiration time (auto delete expired data).",
-  "main": "./src/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "type": "module",
   "files": [
-    "src"
+    "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "test": " find -name \"*test.ts\" | xargs node --loader tsx --test"
   },
   "repository": {
