@@ -22,10 +22,10 @@
     "local storage",
     "temporaryLocalStorage",
     "temporary local storage",
-    "browser",
-    "storage",
-    "expiration",
-    "auto delete"
+    "local storage with expiration",
+    "auto delete",
+    "auto clean",
+    "browser"
   ],
   "author": "Dias Kappassov",
   "license": "MIT",
