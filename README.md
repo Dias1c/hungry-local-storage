@@ -28,20 +28,18 @@ import { hls } from "@diaskappassov/hungry-local-storage";
 // No expire time
 hls.set("cherry", "string");
 
+const curTimestamp = new Date().getTime() / 1000;
 // Expires after 60 seconds
-hls.set("banana", 123, 60);
+hls.set("banana", 123, curTimestamp + 60);
 
 // Expires after 3600 seconds
-hls.set("apple", [1, 2, 3], 3600);
-
-// Expires after 90 seconds
-hls.set("persimmon", { text: "This is object" }, 90);
+hls.set("apple", [1, 2, 3], curTimestamp + 3600);
 
 // Expires after 10 minutes
 hls.set("avocado", {}, { minutes: 10 });
 
 // Expires after 3 days
-hls.set("tea", {}, { days: 3 });
+hls.set("tea", { type: "green", count: 2 }, { days: 3 });
 
 // Expires after 7 seconds + 6 minutes + 5 hours + 4 days+ 3 weeks + 2 months + 1 year
 hls.set("cake", "CAAAKE!", {
@@ -57,7 +55,7 @@ hls.set("cake", "CAAAKE!", {
 
 #### Getting value from localStorage
 
-Imagine that you run `hls.set("apple", [1, 2, 3], 3600);`, and you want to get this value from localStorage.
+Imagine that you run `hls.set("apple", [1, 2, 3], { hours: 1 });`, and you want to get this value from localStorage.
 
 ```ts
 import { hls } from "@diaskappassov/hungry-local-storage";

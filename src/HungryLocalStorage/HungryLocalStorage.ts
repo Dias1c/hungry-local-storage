@@ -21,14 +21,19 @@ export class HungryLocalStorage {
    * 
    * @param key - The key under which the data will be stored in localStorage.
    * @param value - The data value to be stored.
-   * @param expiration - The expiration time in seconds (if a number is provided) or an object with fields specifying expiration in seconds, minutes, hours, days, weeks, months, and years.
+   * @param expiration - The expiration time in [`unix timestamp`](https://www.unixtimestamp.com/) (if a number is provided) or an object with fields specifying expiration in seconds, minutes, hours, days, weeks, months, and years.
    * @returns Returns true if set rewrited existing `localStorage` item by key, otherwise false
    */
   public set(key: string, value: any, expiration?: TExpiration): boolean {
+    let expiredAt: number | undefined = undefined
+    if (expiration != undefined) {
+      expiredAt = getExpirationTimestamp(expiration)
+    }
+
     const item: IHungryLocalStorageItem = {
       creation: getCurrentTimestamp(),
       data: value,
-      expiration: expiration && getExpirationTimestamp(expiration)
+      expiration: expiredAt,
     }
 
     const isRewriting = localStorage.getItem(key) != null
