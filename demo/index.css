@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 100dvh;
+  font-family: Inter;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  max-height: 100%;
+}
+
+/* DOCUMENTATION */
+.block__documentation {
+  width: 50%;
+  overflow: auto;
+}
+
+.block__documentation__readme {
+  width: 100%;
+  text-wrap: wrap;
+
+  padding: 12px 8px;
+}
+.block__documentation__readme * {
+  text-wrap: wrap;
+}
+.block__documentation__readme pre {
+  background-color: rgb(207, 207, 207);
+  padding: 8px 12px;
+  border: 1px solid gray;
+
+  font-family: Consolas, "Lucida Console", monospace;
+  border-radius: 4px;
+}
+.block__documentation__readme blockquote {
+  margin-left: 4px;
+  padding-left: 12px;
+  border-left: 2px solid gray;
+  /* background-color: rgb(207, 207, 207); */
+  color: gray;
+}
+
+/* DEMO */
+.block__demo {
+  width: 50%;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.block__demo__code__block {
+  display: flex;
+  flex: 1;
+  padding: 12px;
+}
+.block__demo__code__block__main {
+  height: 100%;
+  max-height: 50dvh;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+}
+.block__demo__code__block__button__block {
+  position: sticky;
+  bottom: 0;
+  padding: 12px;
+  background-color: #eaeaea;
+
+  border-top: 1px dashed #fff;
+}
+.block__demo__code {
+  flex: 1;
+  outline: none;
+}
+.block__demo__output__block {
+  height: 50dvh;
+  display: flex;
+  flex-direction: column;
+}
+.block__demo__output {
+  margin: 0;
+  color: #fff;
+  background-color: rgb(91, 91, 91);
+  flex: 1;
+
+  padding: 12px;
+}

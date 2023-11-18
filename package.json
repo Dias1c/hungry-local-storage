@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "test": " find -name \"*test.ts\" | xargs node --loader tsx --test",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build",
+    "demo": "npm run prepublishOnly && live-server"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,9 @@
   "homepage": "https://github.com/Dias1c/hungry-local-storage#readme",
   "devDependencies": {
     "@types/node": "^20.8.9",
+    "install": "^0.13.0",
+    "live-server": "^1.2.2",
+    "npm": "^10.2.4",
     "tsx": "^3.14.0"
   }
 }
