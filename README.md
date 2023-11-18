@@ -2,6 +2,12 @@
 
 💾⌛ Local storage tool but with expiration time (auto delete expired data).
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@diaskappassov/hungry-local-storage">
+    <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@diaskappassov/hungry-local-storage"/>
+  </a>
+</p>
+
 ## About
 
 This is a simple tool for storing data in localStorage with expiration time. It's useful for storing temporary data, such as user preferences, but also for storing data that is not needed after a certain period of time.
