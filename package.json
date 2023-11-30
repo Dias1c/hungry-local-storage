@@ -24,8 +24,7 @@
     "temporaryLocalStorage",
     "temporary local storage",
     "local storage with expiration",
-    "auto delete",
-    "auto clean",
+    "auto clean local storage",
     "browser"
   ],
   "author": "Dias Kappassov",
