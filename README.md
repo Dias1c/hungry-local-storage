@@ -135,6 +135,10 @@ After running code `hls.set("apple", [1, 2, 3], { hours: 5 });`, in local storag
 
 > Property `expiration` is optional, it means, if expiration is not exists, it will be stored in local storage while you will not delete it.
 
+## License
+
+MIT
+
 ## Authors
 
 - [Dias1c](https://github.com/Dias1c)
