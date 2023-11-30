@@ -1,6 +1,6 @@
 {
   "name": "@diaskappassov/hungry-local-storage",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "💾⌛ Tool for store temporary data in local storage (with autodelete expired data).",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
