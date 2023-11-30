@@ -8,7 +8,7 @@
     <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@diaskappassov/hungry-local-storage"/>
   </a>
   <a href="https://github.com/Dias1c/hungry-local-storage/">
-    <img alt="Visit the NPM page" src="https://img.shields.io/github/stars/Dias1c/hungry-local-storage?style=social&label=GitHub&maxAge=2592000"/>
+    <img alt="Visit package GitHub page" src="https://img.shields.io/github/stars/Dias1c/hungry-local-storage?style=social&label=GitHub&maxAge=2592000"/>
   </a>
 </p>
 
