@@ -1,6 +1,16 @@
-# [hungry-local-storage](https://github.com/Dias1c/hungry-local-storage)
+# hungry-local-storage
 
-💾⌛ Local storage tool but with expiration time (auto delete expired data).
+💾⌛ Tool for store temporary data in local storage (with autodelete expired data).
+
+<p align="center">
+  <img alt="ts" src="https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555">
+  <a href="https://www.npmjs.com/package/@diaskappassov/hungry-local-storage">
+    <img alt="Visit the NPM page" src="https://img.shields.io/npm/v/@diaskappassov/hungry-local-storage"/>
+  </a>
+  <a href="https://github.com/Dias1c/hungry-local-storage/">
+    <img alt="Visit package GitHub page" src="https://img.shields.io/github/stars/Dias1c/hungry-local-storage?style=social&label=GitHub&maxAge=2592000"/>
+  </a>
+</p>
 
 ## About
 
@@ -110,6 +120,24 @@ hls.remove("apple");
 ```
 
 > Under code `hls.remove` just runs `localStorage.removeItem` method
+
+### Structure of created item by hls
+
+After running code `hls.set("apple", [1, 2, 3], { hours: 5 });`, in local storage it will be stored as follows:
+
+```js
+{
+  creation: CURRENT_TIMESTAMP,
+  data: "[1,2,3]",
+  expiration: CURRENT_TIMESTAMP + HOURS_5,
+}
+```
+
+> Property `expiration` is optional, it means, if expiration is not exists, it will be stored in local storage while you will not delete it.
+
+## License
+
+MIT
 
 ## Authors
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@diaskappassov/hungry-local-storage package demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="block__documentation">
+        <div id="readme" class="block__documentation__readme">
+          <p>HERE MUST BE README.</p>
+
+          <p>Open this file with command: npm run demo</p>
+        </div>
+      </div>
+
+      <div class="block__demo">
+        <div class="block__demo__code__block__main">
+          <div class="block__demo__code__block">
+            <pre contenteditable="true" id="code" class="block__demo__code">
+import { hls } from "./../lib/esm/index.js";
+
+console.log("hls.get('myKey'):", hls.get('key'));
+
+const value = `Saved at ${new Date().toLocaleString()} `;
+
+console.log("hls.set('myKey', 'value'):", hls.set('key', value, {
+  seconds: 10,
+}));
+console.log("hls.get('myKey'):", hls.get('key'));
+</pre
+            >
+          </div>
+          <div class="block__demo__code__block__button__block">
+            <button id="btn">Run Code</button>
+          </div>
+        </div>
+        <div class="block__demo__output__block">
+          <pre id="output" class="block__demo__output">
+Click to "Run Code" and check you local storage in dev tools</pre
+          >
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+  </body>
+</html>
