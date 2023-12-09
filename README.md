@@ -129,7 +129,7 @@ After running code `hls.set("apple", [1, 2, 3], { hours: 5 });`, in local storag
 {
   creation: CURRENT_TIMESTAMP,
   data: "[1,2,3]",
-  expiration: CURRENT_TIMESTAMP + HOURS_5,
+  expiration?: CURRENT_TIMESTAMP + 5_HOURS_IN_TIMESTAMP,
 }
 ```
 
