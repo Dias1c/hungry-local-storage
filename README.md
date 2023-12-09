@@ -14,7 +14,7 @@
 
 ## About
 
-This is a simple tool for storing data in localStorage with expiration time. It's useful for storing temporary data, such as user preferences, but also for storing data that is not needed after a certain period of time.
+This is a simple tool for storing temporary data in localStorage. It's useful for storing temporary data, such as user preferences, but also for storing data that is not needed after a certain period of time.
 
 ### Why hungry-local-storage?
 
